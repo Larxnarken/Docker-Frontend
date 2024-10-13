@@ -1,32 +1,38 @@
-<html>
-<body>
-  <div class="container">
-    <h1>Karteikarten-Manager</h1>
+<div class="container"></div>
+<h1>Karteikarten-Manager</h1>
 
-    <!-- Formular zum Hinzufügen einer neuen Karteikarte -->
-    <div class="card-form">
-      <h2>Neue Karteikarte hinzufügen</h2>
-      <form id="flashcard-form">
+<!-- Formular zum Hinzufügen einer neuen Karteikarte -->
+<div class="card-form">
+    <h2>Neue Karteikarte hinzufügen</h2>
+    <form id="flashcard-form">
         <div class="form-group">
-          <label for="front">Vorderseite:</label>
-          <input type="text" id="front" name="front" placeholder="Text für die Vorderseite" required>
+            <label for="front">Vorderseite:</label>
+            <input type="text" id="front" name="front" placeholder="Text für die Vorderseite" required>
         </div>
         <div class="form-group">
-          <label for="back">Rückseite:</label>
-          <input type="text" id="back" name="back" placeholder="Text für die Rückseite" required>
+            <label for="back">Rückseite:</label>
+            <input type="text" id="back" name="back" placeholder="Text für die Rückseite" required>
         </div>
         <button type="submit">Speichern</button>
-      </form>
-    </div>
+    </form>
+</div>
 
-    <!-- Liste der Karteikarten -->
-    <div class="card-list">
-      <h2>Meine Karteikarten</h2>
-      <ul id="cards">
+<!-- Liste der Karteikarten -->
+<div class="card-list">
+    <h2>Meine Karteikarten</h2>
+    <ul id="cards">
         <!-- Dynamisch hinzugefügte Karteikarten erscheinen hier -->
-      </ul>
-    </div>
-  </div>
+        <li>
+            <div class="card">
+                <div class="card-front">
+                    Beispiel Vorderseite
+                </div>
+                <div class="card-back">
+                    Beispiel Rückseite
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
 
-</body>
-</html>
+
