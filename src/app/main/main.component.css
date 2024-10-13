@@ -1,0 +1,89 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Formular-Stile */
+  .card-form {
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  button:hover {
+    background: #218838;
+  }
+  
+  /* Liste der Karteikarten */
+  .card-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .card-list .card {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-front, .card-back {
+    width: 45%;
+  }
+  
+  .card-front {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 3px;
+  }
+  
+  .card-back {
+    background-color: #dee2e6;
+    padding: 10px;
+    border-radius: 3px;
+  }

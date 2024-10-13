@@ -1,1 +1,62 @@
-<p>main works!</p>
+<html>
+<body>
+  <div class="container">
+    <h1>Karteikarten-Manager</h1>
+
+    <!-- Formular zum Hinzufügen einer neuen Karteikarte -->
+    <div class="card-form">
+      <h2>Neue Karteikarte hinzufügen</h2>
+      <form id="flashcard-form">
+        <div class="form-group">
+          <label for="front">Vorderseite:</label>
+          <input type="text" id="front" name="front" placeholder="Text für die Vorderseite" required>
+        </div>
+        <div class="form-group">
+          <label for="back">Rückseite:</label>
+          <input type="text" id="back" name="back" placeholder="Text für die Rückseite" required>
+        </div>
+        <button type="submit">Speichern</button>
+      </form>
+    </div>
+
+    <!-- Liste der Karteikarten -->
+    <div class="card-list">
+      <h2>Meine Karteikarten</h2>
+      <ul id="cards">
+        <!-- Dynamisch hinzugefügte Karteikarten erscheinen hier -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Skript für die Frontend-Interaktivität -->
+  <script>
+    document.getElementById('flashcard-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const front = document.getElementById('front').value.trim();
+      const back = document.getElementById('back').value.trim();
+
+      if (front && back) {
+        const cardList = document.getElementById('cards');
+        const listItem = document.createElement('li');
+        listItem.className = 'card';
+
+        const frontDiv = document.createElement('div');
+        frontDiv.className = 'card-front';
+        frontDiv.textContent = front;
+
+        const backDiv = document.createElement('div');
+        backDiv.className = 'card-back';
+        backDiv.textContent = back;
+
+        listItem.appendChild(frontDiv);
+        listItem.appendChild(backDiv);
+        cardList.appendChild(listItem);
+
+        // Formular zurücksetzen
+        document.getElementById('flashcard-form').reset();
+      }
+    });
+  </script>
+</body>
+</html>
