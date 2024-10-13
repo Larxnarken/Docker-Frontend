@@ -28,35 +28,5 @@
     </div>
   </div>
 
-  <!-- Skript für die Frontend-Interaktivität -->
-  <script>
-    document.getElementById('flashcard-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      const front = document.getElementById('front').value.trim();
-      const back = document.getElementById('back').value.trim();
-
-      if (front && back) {
-        const cardList = document.getElementById('cards');
-        const listItem = document.createElement('li');
-        listItem.className = 'card';
-
-        const frontDiv = document.createElement('div');
-        frontDiv.className = 'card-front';
-        frontDiv.textContent = front;
-
-        const backDiv = document.createElement('div');
-        backDiv.className = 'card-back';
-        backDiv.textContent = back;
-
-        listItem.appendChild(frontDiv);
-        listItem.appendChild(backDiv);
-        cardList.appendChild(listItem);
-
-        // Formular zurücksetzen
-        document.getElementById('flashcard-form').reset();
-      }
-    });
-  </script>
 </body>
 </html>
