@@ -1,7 +1,11 @@
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { catchError, Observable } from 'rxjs';
 
 //Interface for flashcard
-interface Flashcard {
+interface Card {
+  card_Id: string;
   front: string;
   back: string;
 }
@@ -9,26 +13,26 @@ interface Flashcard {
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
 
 //MainComponent mit vorbefüllten Flashcards
 export class MainComponent {
-  flashcards = [
-    { front: 'Frage 1', back: 'Antwort 1' },
-    { front: 'Frage 2', back: 'Antwort 2' }
+  Cards : Card[] = [
+    {card_Id:"test", front:"test", back:"test"},
+    {card_Id:"test", front:"test", back:"test"}
   ];
+    
+  constructor(private http: HttpClient) {}
 
-  newFlashcard: Flashcard = { front: '', back: '' };
+  public postCard(){
+    this.http.post("http://localhost:4444/card", { "front": "sohn", "back": "hurensohn" }).subscribe((data)=>{
+      console.log(data);
+    });
+    return ;
+  };
 
-  //Funktion um Flashcard hinzuzufügen
-  addFlashcard() {
-    if (this.newFlashcard.front.trim() && this.newFlashcard.back.trim()) {
-      this.flashcards.push({ ...this.newFlashcard });
-      this.newFlashcard = { front: '', back: '' };
-    }
-  }
 }
 

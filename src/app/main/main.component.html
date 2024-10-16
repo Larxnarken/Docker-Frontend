@@ -13,9 +13,11 @@
             <label for="back">Rückseite:</label>
             <input type="text" id="back" name="back" placeholder="Text für die Rückseite" required>
         </div>
-        <button type="submit">Speichern</button>
-    </form>
+        <button (click)="postCard">Speichern</button>
+      </form>
 </div>
+<button (click)="postCard()" type="submit">Hurensohn
+</button>
 
 <!-- Formular zum Hinzufügen einer neuen Karteikarte
 <div class="card-form">
@@ -54,14 +56,17 @@
     <h2>Meine Karteikarten</h2>
     <ul id="cards">
         <!-- Dynamisch hinzugefügte Karteikarten erscheinen hier -->
-        <li>
+        <li *ngFor="let Card of Cards">
             <div class="card">
                 <div class="card-front">
-                    Beispiel Vorderseite
+                    {{Card.front}}
                 </div>
                 <div class="card-back">
-                    Beispiel Rückseite
+                    {{Card.back}}
                 </div>
+                <div class="card-id">
+                  {{Card.card_Id}}
+              </div>
             </div>
         </li>
     </ul>
