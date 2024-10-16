@@ -4,19 +4,19 @@
 <!-- Formular zum Hinzufügen einer neuen Karteikarte -->
 <div class="card-form">
     <h2>Neue Karteikarte hinzufügen</h2>
-    <form id="flashcard-form">
+    <form id="flashcard-form" [formGroup]="cart">
         <div class="form-group">
             <label for="front">Vorderseite:</label>
-            <input type="text" id="front" name="front" placeholder="Text für die Vorderseite" required>
+            <input formControlName="front" type="text" id="front" name="front" placeholder="Text für die Vorderseite" required>
         </div>
         <div class="form-group">
             <label for="back">Rückseite:</label>
-            <input type="text" id="back" name="back" placeholder="Text für die Rückseite" required>
+            <input formControlName="back" type="text" id="back" name="back" placeholder="Text für die Rückseite" required>
         </div>
-        <button (click)="postCard">Speichern</button>
-      </form>
+        <button (click)="postCard()">Speichern</button>
+    </form>
 </div>
-<button (click)="postCard()" type="submit">Hurensohn
+<button (click)="deleteCard()">Wipe Database
 </button>
 
 <!-- Formular zum Hinzufügen einer neuen Karteikarte
