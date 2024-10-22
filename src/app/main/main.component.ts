@@ -23,7 +23,8 @@ interface Card {
 export class MainComponent implements OnInit{
   // Variablen oder so
   Cards : Card[] = [
-  ];
+
+   ];
 
   cart = new FormGroup({
     front: new FormControl(''),
@@ -60,9 +61,9 @@ export class MainComponent implements OnInit{
 
   public deleteCard(){
 
-    this.http.delete("http://localhost:4444/card").pipe(take(1)).subscribe((data)=>{
-      this.getCards()      
-    });
+    //this.http.delete("http://localhost:4444/card").pipe(take(1)).subscribe((data)=>{
+    //  this.getCards()      
+    //});
     return ;
   };
 
