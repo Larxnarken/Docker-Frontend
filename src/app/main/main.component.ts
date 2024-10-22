@@ -6,7 +6,7 @@ import { catchError, Observable, take } from 'rxjs';
 
 //Interface for flashcard
 interface Card {
-  card_Id: string;
+  card_id: string;
   front: string;
   back: string;
 }
@@ -61,11 +61,19 @@ export class MainComponent implements OnInit{
 
   public deleteCard(){
 
-    //this.http.delete("http://localhost:4444/card").pipe(take(1)).subscribe((data)=>{
-    //  this.getCards()      
-    //});
+    this.http.delete("http://localhost:4444/card").pipe(take(1)).subscribe((data)=>{
+      this.getCards()      
+    });
     return ;
   };
+  
+  public deleteOneCard(cId: any){
+
+    this.http.delete("http://localhost:4444/card/" + cId).pipe(take(1)).subscribe((data)=>{
+      this.getCards()      
+    });
+    return ;
+  }
 
 }
 
